@@ -7,6 +7,7 @@ import adminreaderRoutes from './routes/AdminReaderRoutes.js';
 import consumptionRoutes from './routes/ConsumptionRoutes.js';
 import paymentRoutes from './routes/paymentRoutes.js';
 import receiptRoutes from "./routes/receiptRoutes.js";
+import DeactNoticeRoutes from "./routes/DeactNoticeRoutes.js";
 
 const app = express();
 dotenv.config();
@@ -36,3 +37,5 @@ app.use('/consumption', consumptionRoutes);
 app.use('/payment', paymentRoutes);
 
 app.use("/receipt", receiptRoutes);
+
+app.use("/deact-notice", DeactNoticeRoutes);
