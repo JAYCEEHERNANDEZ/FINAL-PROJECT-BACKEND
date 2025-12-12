@@ -4,6 +4,7 @@ import cors from 'cors';
 import dotenv from "dotenv";
 import userRoutes from './routes/UserRoutes.js'
 import adminreaderRoutes from './routes/AdminReaderRoutes.js'
+import consumptionRoutes from './routes/ConsumptionRoutes.js';
 
 const app = express();
 dotenv.config();
@@ -27,3 +28,5 @@ try {
 app.use('/user', userRoutes);
 
 app.use('/adminreader', adminreaderRoutes);
+
+app.use('/consumption', consumptionRoutes); 
