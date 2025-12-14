@@ -2,18 +2,23 @@ import express from 'express';
 import 'dotenv/config.js';
 import cors from 'cors';
 import dotenv from "dotenv";
-import userRoutes from './routes/UserRoutes.js';
-import adminreaderRoutes from './routes/AdminReaderRoutes.js';
+import userRoutes from './routes/UserRoutes.js'
+import adminreaderRoutes from './routes/AdminReaderRoutes.js'
 import consumptionRoutes from './routes/ConsumptionRoutes.js';
 import paymentRoutes from './routes/paymentRoutes.js';
-import receiptRoutes from "./routes/receiptRoutes.js";
+import notificationRoutes from "./routes/notificationRoutes.js";
+
 import DeactNoticeRoutes from "./routes/DeactNoticeRoutes.js";
+
+import receiptRoutes from "./routes/receiptRoutes.js";
+
+
 
 const app = express();
 dotenv.config();
 
 let corsOptions = {
-  origin: "http://localhost:5173",
+  origin: "http://localhost:5173", // your Vite frontend URL
 };
 
 app.use(cors());
@@ -30,12 +35,23 @@ try {
 
 app.use('/user', userRoutes);
 
-app.use('/adminreader', adminreaderRoutes);
+app.use('/adminreader', adminreaderRoutes )
 
 app.use('/consumption', consumptionRoutes); 
 
+
 app.use('/payment', paymentRoutes);
+
+app.use("/notifications", notificationRoutes);
+
+
+
+app.use("/deact-notice", DeactNoticeRoutes);
+
+app.use("/uploads", express.static("uploads"));
 
 app.use("/receipt", receiptRoutes);
 
-app.use("/deact-notice", DeactNoticeRoutes);
+
+
+
