@@ -1,6 +1,6 @@
-import * as adminreader from "../models/AdminReaderModel.js";
+import * as adminreader from "../models/AdminReadermodel.js";
 import bcrypt from 'bcryptjs';
-import { updateUserPassword } from "../models/AdminReaderModel.js";
+import { updateUserPassword } from "../models/AdminReadermodel.js";
 
 export const Getall = async (req, res) => {
   try {
